@@ -1,0 +1,206 @@
+@use "./assets/scss/index.scss" as *;
+:root {
+  // --flex-basis-setting-oversize: 37%;
+  // --flex-basis-setting-mobile: 33%;
+  // --height-header: 56px;
+  // --padding-y-wrapper: 24px;
+  // --padding-x: 32px;
+  // --padding-x-oversize: 400px;
+
+  --primary: #fe9800;
+  --alert: #fe2200;
+  --warning: #ffd500;
+  --success: #00fe7f;
+  --information: #00a9fe;
+  --purple: #fe00fe;
+
+  --text-primary: #ffffff;
+  --text-secondary: #c4c2c0;
+  --text-tertiary: #888581;
+
+  --border-color: #5f5c59;
+  --bg: #353331;
+  --hover-table: #443e36;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --grey-neutral-900: #1f1e1d;
+  --grey-neutral-800: #353331;
+  --grey-neutral-700: #4a4745;
+  --grey-neutral-600: #5f5c59;
+  --grey-neutral-500: #74706d;
+  --grey-neutral-400: #888581;
+  --grey-neutral-300: #9c9996;
+  --grey-neutral-200: #b0adab;
+  --grey-neutral-100: #c4c2c0;
+  --grey-neutral-80: #d7d6d5;
+  --grey-neutral-60: #ebebea;
+
+  --grey-primary-900: #221f1b;
+  --grey-primary-800: #39332d;
+  --grey-primary-750: #443e36;
+  --grey-primary-700: #4f4740;
+  --grey-primary-600: #665c52;
+  --grey-primary-500: #7d7064;
+  --grey-primary-400: #928577;
+  --grey-primary-300: #a4998e;
+  --grey-primary-200: #b6ada4;
+  --grey-primary-100: #c9c2bb;
+  --grey-primary-80: #dbd6d2;
+  --grey-primary-60: #edebe8;
+
+  --blue-900: #00293d;
+  --blue-800: #004466;
+  --blue-700: #005f8f;
+  --blue-600: #007ab8;
+  --blue-500: #0096e0;
+  --blue-400: #00a9fe;
+  --blue-300: #33bbff;
+  --blue-200: #5cc9ff;
+  --blue-100: #85d6ff;
+  --blue-80: #ade4ff;
+  --blue-60: #d6f1ff;
+
+  --green-900: #003d1f;
+  --green-800: #006633;
+  --green-700: #008f47;
+  --green-600: #00b85c;
+  --green-500: #00e070;
+  --green-400: #00fe7f;
+  --green-300: #33ff99;
+  --green-200: #5cffad;
+  --green-100: #85ffc2;
+  --green-80: #adffd6;
+  --green-60: #d6ffeb;
+
+  --red-900: #3d0800;
+  --red-800: #660e00;
+  --red-700: #8f1300;
+  --red-600: #b81800;
+  --red-500: #e01e00;
+  --red-400: #fe2200;
+  --red-300: #ff4e33;
+  --red-200: #ff725c;
+  --red-100: #ff9585;
+  --red-80: #ffb8ad;
+  --red60: #ffdcd6;
+
+  --yellow-900: #3d3300;
+  --yellow-800: #665500;
+  --yellow-700: #8f7700;
+  --yellow-600: #b89900;
+  --yellow-500: #e0bb00;
+  --yellow-400: #ffd500;
+  --yellow-300: #ffdd33;
+  --yellow-200: #ffe45c;
+  --yellow-100: #ffeb85;
+  --yellow-80: #fff1ad;
+  --yellow-60: #fff8d6;
+
+  --orange-900: #3d2500;
+  --orange-800: #663d00;
+  --orange-700: #8f5600;
+  --orange-600: #b86e00;
+  --orange-500: #e08700;
+  --orange-400: #fe9800;
+  --orange-300: #ffad33;
+  --orange-200: #ffbe5c;
+  --orange-100: #ffce85;
+  --orange-80: #ffdead;
+  --orange-60: #ffefd6;
+
+  --purple-900: #3d003d;
+  --purple-800: #660066;
+  --purple-700: #8f008f;
+  --purple-600: #b800b8;
+  --purple-500: #e000e0;
+  --purple-400: #fe00fe;
+  --purple-300: #ff33ff;
+  --purple-200: #ff5cff;
+  --purple-100: #ff85ff;
+  --purple-80: #ffadff;
+  --purple-60: #ffd6ff;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+$animation-duration: 0.7s;
+$keyframes: 30px;
+$-keyframes: -30px;
+
+.reveal {
+  position: relative;
+  opacity: 0;
+  &.active {
+    opacity: 1;
+    &.fade-top {
+      animation: fade-top $animation-duration ease-in;
+    }
+    &.fade-right {
+      animation: fade-right $animation-duration ease-in;
+    }
+    &.fade-bottom {
+      animation: fade-bottom $animation-duration ease-in;
+    }
+    &.fade-left {
+      animation: fade-left $animation-duration ease-in;
+    }
+    &.fade-in {
+      animation: fade-in 1.5s ease-in-out;
+    }
+  }
+}
+
+@keyframes fade-top {
+  0% {
+    transform: translateY($-keyframes);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-right {
+  0% {
+    transform: translateX($keyframes);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-bottom {
+  0% {
+    transform: translateY($keyframes);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-left {
+  0% {
+    transform: translateX($-keyframes);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
