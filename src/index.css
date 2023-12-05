@@ -27,5 +27,5 @@
 }
 
 *::-webkit-scrollbar-track {
-  background-color: transparent; /* Màu của nền thanh cuộn */
+  background-color: white; /* Màu của nền thanh cuộn */
 }
