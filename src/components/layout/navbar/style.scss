@@ -3,7 +3,7 @@
     background-color: var(--bg-layout);
     display: flex;
     justify-content: center;
-    color: black;
+    color: white;
 }
 
 .navContainer{
@@ -17,7 +17,7 @@
 
 .navTitle{
     cursor: pointer;
-    color: black;
+    color: white;
 }
 
 .logo{
@@ -29,25 +29,24 @@
     border: none;
     padding: 5px 10px;
     cursor: pointer;
-    
-    color: black;
+    color: white;
 }
 
 .navbarList{
     display: flex;
     background-color: var(--bg-layout);
-    color: black;
+    color: white;
     justify-content: center;
     position: relative;
     gap: 40px;
-    padding: 0px var(--padding-x);
+    padding: 20px var(--padding-x);
 
 }
 
 .headerListItem{
     display: flex;
     align-items: center;
-    
+    cursor: pointer;
 }
 
 .headerListItem.active{

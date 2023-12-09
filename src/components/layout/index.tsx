@@ -1,14 +1,13 @@
 import { ReactNode } from 'react';
-import Header from './header/Header';
 import NavBar from './navbar/NavBar';
 import Footer from './footer/Footer';
-import MailList from './mailList/MailList';
+import { Divider } from '@mui/material';
 
 function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <NavBar/>
-      <Header/>
+      <Divider/>
       {children}
       <Footer/>
     </>
