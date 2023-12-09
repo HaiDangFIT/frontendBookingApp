@@ -1,0 +1,91 @@
+.doctorDetail{
+    display: flex;
+    flex-direction: column;
+}
+
+.doctorInfor{
+    display: flex;
+    flex-direction: row;
+    padding: 30px var(--padding-x);
+    justify-content: center;
+    align-items: center;
+}
+
+.doctorImgBox{
+    position: relative;   
+    flex-direction: column;
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    flex: 1;
+}
+
+.doctorImg{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.doctorDescription{
+    flex: 8;
+    width: 1024px;
+    max-width: 100%;
+    position: relative;
+    text-align: start;
+}
+
+.schedule{
+    padding-left: var(--padding-x);
+    padding-right: 50px;
+    border-right: 1px solid black;
+}
+
+.datePicker{
+    padding-bottom: 10px;
+}
+
+.doctorSchedule{
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    
+}
+
+.address{
+    padding-left: 50px;
+}
+
+.calendar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.boxSchedule{
+    display: flex;
+    flex-direction: column;
+}
+
+.boxBtn{
+    display: flex;
+    flex-direction: row;
+}
+
+.btnSchedule{
+    margin: 10px 10px 0px 0px;
+}
+
+.boxPatientCmt{
+    padding: 0px var(--padding-x);
+    display: flex;
+    flex-direction: column;
+}
+
+.patientCmt{
+    display: flex;
+    align-items: center;
+}
