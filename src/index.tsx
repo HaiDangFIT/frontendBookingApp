@@ -9,7 +9,7 @@ import {
 import { theme } from './themes/Theme';
 import './i18n';
 import { Provider } from 'react-redux';
-import { store } from './redux/store/Store';
+import { store } from './redux/store/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

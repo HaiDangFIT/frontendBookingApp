@@ -1,3 +1,4 @@
+import BookingForm from '../pages/booking/BookingForm';
 import DoctorDetail from '../pages/doctor/doctor-detail/DoctorDetail';
 import DoctorList from '../pages/doctor/doctor-list/DoctorList';
 import Home from '../pages/home/HomePage/Home';
@@ -8,8 +9,9 @@ const routes = {
   home: '/',
   login: '/login',
   register: '/register',
-  doctorDetail:'/doctor-detail',
+  doctorDetail:'doctor-detail/:id',
   doctorList:'/doctor-list',
+  bookingForm:'/booking-form',
 };
 
 export const privateRoutes = [];
@@ -20,4 +22,6 @@ export const publicRoutes = [
   { path: routes.register, component: Register, layout: false},
   { path: routes.doctorDetail, component: DoctorDetail, layout: true},
   { path: routes.doctorList, component: DoctorList, layout: true},
+  { path: routes.bookingForm, component: BookingForm, layout: true},
+
 ];

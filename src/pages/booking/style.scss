@@ -1,0 +1,36 @@
+.boxBookingForm{
+    display: flex;
+    flex-direction: column;
+    //padding: 0px var(--padding-x);
+    padding-top: 20px;
+}
+
+.doctorInfoBox{
+    display: flex;
+    flex-direction: row;
+    //justify-content: center;
+    //align-items: center;
+    padding-left: 400px;
+}
+
+.doctorInfo{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.bookingInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.textField{
+    padding: 10px 400px;
+    width: 100%;
+}
+
+.input-field{
+    color: black;
+}
