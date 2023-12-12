@@ -14,6 +14,15 @@ export const doctorAPI = {
 
 export const scheduleAPI = {
   getSchedules: () => agent.get('/schedule').then(response => response.data),
+  getSchedule: (id: string) => agent.get(`/schedule/${id}`).then(response => response.data),
+}
+
+export const userAPI = {
+  login: (email: string, password: string) => agent.post('/user/login', { email, password }).then(response => response.data),
+}
+
+export const bookingAPI = {
+
 }
 
 export default agent;

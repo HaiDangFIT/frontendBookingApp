@@ -2,9 +2,27 @@ import { Avatar, Box, Container, Stack, TextField, Typography, Button } from '@m
 import './style.scss'
 import LockPersonIcon from '@mui/icons-material/LockPerson';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../redux/store/store';
+import { useState } from 'react';
+import { login } from '../../redux/slice/authSlice';
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch: AppDispatch = useDispatch();
+  
+  const { loading } = useSelector((state: RootState) => state.auth);
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isAuthenticated);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const handleLogin = async () => {
+    await dispatch(login(email, password));
+  };
+
+  if (isLoggedIn) {
+    navigate('/');
+  }
+
   return (
     <div className='loginPage'>
       <div className="loginBox">
@@ -33,7 +51,11 @@ const Login = () => {
                 id='email'
                 label='Tài khoản'
                 name='email'
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 autoComplete='email'
+                InputProps={{ style: { color: 'white' } }}
+                InputLabelProps={{ style: { color: 'white' } }}
               />
             </Box>
             <Box className='tField'>
@@ -44,6 +66,10 @@ const Login = () => {
                 label='Mật khẩu'
                 name='password'
                 type='password'
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)}
+                InputProps={{ style: { color: 'white' } }}
+                InputLabelProps={{ style: { color: 'white' } }}
               />
             </Box>
             <Box className='tField'>
@@ -65,6 +91,8 @@ const Login = () => {
                 fullWidth
                 className='loginBtn'
                 size='medium'
+                onClick={handleLogin} 
+                disabled={loading}
               >
                 Đăng nhập
               </Button>
