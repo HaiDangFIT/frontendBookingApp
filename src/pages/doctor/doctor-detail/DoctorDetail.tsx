@@ -76,7 +76,7 @@ const DoctorDetail = () => {
             day: 'numeric',
         };
         const scheduleDate = new Date(schedule.date).toLocaleString('vi-VN', options);
-        return schedule.doctorID._id._id === selectedDoctor?._id?._id && scheduleDate === dateToFind;
+        return schedule.doctorID._id === selectedDoctor?._id?._id && scheduleDate === dateToFind;
     });
     let formattedCost = '';
     if (matchingSchedules?.cost) {
@@ -89,14 +89,14 @@ const DoctorDetail = () => {
     }
     
 
-    console.log(matchingSchedules);
+    //console.log(matchingSchedules);
 
     useEffect(() => {
         dispatch(fetchSchedules());
     }, [dispatch]);
 
     const handleButtonClick = (time: string) => {
-        navigate(`/booking-form?time=${time}`);
+        navigate(`/booking-form/${matchingSchedules?._id}/${time}`);
     };
 
     // Sắp xếp theo lưới 3x5

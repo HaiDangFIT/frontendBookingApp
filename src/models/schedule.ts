@@ -25,15 +25,7 @@ export interface Schedule {
   _id: string;
   doctorID: {
     totalRatings: number;
-    _id: {
-      _id: string;
-      fullName: string;
-      email: string;
-      mobile: string;
-      address: string;
-      isBlocked: boolean;
-      gender: string;
-    };
+    _id: string;
     clinicID: Clinic;
     description: string;
     specialtyID: {

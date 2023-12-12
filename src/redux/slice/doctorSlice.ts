@@ -25,30 +25,30 @@ const doctorSlice = createSlice({
     reducers: {
         //getAllDoctors
         getDoctorsStart(state) {
-        state.loading = true;
-        state.error = null;
+          state.loading = true;
+          state.error = null;
         },
         getDoctorsSuccess(state, action: PayloadAction<Doctor[]>) {
-        state.loading = false;
-        state.doctors = action.payload;
+          state.loading = false;
+          state.doctors = action.payload;
         },
         getDoctorsFailure(state, action: PayloadAction<string>) {
-        state.loading = false;
-        state.error = action.payload;
+          state.loading = false;
+          state.error = action.payload;
         },
 
         //getDoctor by id
         getDoctorStart(state) {
-        state.loading = true;
-        state.error = null;
+          state.loading = true;
+          state.error = null;
         },
         getDoctorSuccess(state, action: PayloadAction<Doctor>) {
-        state.loading = false;
-        state.selectedDoctor = action.payload;
+          state.loading = false;
+          state.selectedDoctor = action.payload;
         },
         getDoctorFailure(state, action: PayloadAction<string>) {
-        state.loading = false;
-        state.error = action.payload;
+          state.loading = false;
+          state.error = action.payload;
         },
     }
 
@@ -84,7 +84,6 @@ export const fetchDoctor = (id: string): AppThunk => async (dispatch) => {
     dispatch(getDoctorStart());
     const response = await doctorAPI.getDoctor(id);
     dispatch(getDoctorSuccess(response.data));
-    console.log(response.data)
   } catch (error) {
     dispatch(getDoctorFailure(String(error)));
   }

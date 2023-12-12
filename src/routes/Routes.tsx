@@ -7,11 +7,11 @@ import Register from '../pages/register/Register';
 
 const routes = {
   home: '/',
-  login: '/login',
-  register: '/register',
+  login: 'login',
+  register: 'register',
   doctorDetail:'doctor-detail/:id',
-  doctorList:'/doctor-list',
-  bookingForm:'/booking-form',
+  doctorList:'doctor-list',
+  bookingForm:'booking-form/:id/:time',
 };
 
 export const privateRoutes = [];

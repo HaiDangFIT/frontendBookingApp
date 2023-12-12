@@ -206,26 +206,26 @@ export const theme = createTheme({
           },
           '& .MuiInputLabel-root': {
             position: 'static',
-            color: 'var(--text-primary) ',
+            //color: 'var(--text-primary) ',
             transform: 'none',
             fontWeight: '600',
             fontSize: '14px',
             marginBottom: '8px',
             '&.Mui-focused ': {
-              color: 'var(--text-primary)',
+              //color: 'var(--text-primary)',
             },
             '&.Mui-error ': {
-              color: 'var(--text-primary)',
+              //color: 'var(--text-primary)',
             },
             '&.Mui-disabled ': {
-              color: 'var(--text-tertiary)',
+              //color: 'var(--text-tertiary)',
             },
           },
           '& .MuiOutlinedInput-root': {
             borderRadius: '8px',
             paddingRight: '16px',
             '& input': {
-              color: 'var(--text-primary)',
+              //color: 'var(--text-primary)',
               '&::placeholder': {
                 color: 'var(--text-secondary)',
               },

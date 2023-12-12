@@ -1,10 +1,12 @@
 import { Action, ThunkAction, combineReducers, configureStore } from '@reduxjs/toolkit';
 import doctorReducer from '../slice/doctorSlice'
 import scheduleReducer from '../slice/scheduleSlice'
+import authReducer from '../slice/authSlice'
 
 const rootReducer = combineReducers({
   doctor: doctorReducer,
   schedule: scheduleReducer,
+  auth: authReducer,
 });
 
 const store = configureStore({
