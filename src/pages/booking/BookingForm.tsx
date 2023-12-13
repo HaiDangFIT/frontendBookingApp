@@ -23,7 +23,7 @@ const BookingForm = () => {
   useEffect(() => {
     if (selectedSchedule?.doctorID._id) 
       {
-        dispatch(fetchDoctor(selectedSchedule.doctorID._id));
+        dispatch(fetchDoctor(selectedSchedule.doctorID._id._id));
       }
     }, [dispatch, selectedSchedule?.doctorID._id])
   console.log(selectedDoctor);
