@@ -26,6 +26,9 @@
 .rightLgBox{
     flex: 1;
     background-color: #3B33D5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .loginImg{
@@ -56,4 +59,10 @@
     align-items: center;
     justify-content: center;
     margin: 0px 150px;
+}
+
+.avtBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

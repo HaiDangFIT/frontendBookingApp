@@ -187,78 +187,78 @@ export const theme = createTheme({
       },
     },
     
-    MuiTextField: {
-      defaultProps: {
-        fullWidth: true,
-        InputLabelProps: {
-          shrink: false,
-        },
-      },
+    // MuiTextField: {
+    //   defaultProps: {
+    //     fullWidth: true,
+    //     InputLabelProps: {
+    //       shrink: false,
+    //     },
+    //   },
 
-      styleOverrides: {
-        root: ({ ownerState }) => ({
-          '& .MuiFormHelperText-root': {
-            marginLeft: 0,
-            marginTop: '6px',
-            '&.Mui-error': {
-              color: 'var(--alert)',
-            },
-          },
-          '& .MuiInputLabel-root': {
-            position: 'static',
-            //color: 'var(--text-primary) ',
-            transform: 'none',
-            fontWeight: '600',
-            fontSize: '14px',
-            marginBottom: '8px',
-            '&.Mui-focused ': {
-              //color: 'var(--text-primary)',
-            },
-            '&.Mui-error ': {
-              //color: 'var(--text-primary)',
-            },
-            '&.Mui-disabled ': {
-              //color: 'var(--text-tertiary)',
-            },
-          },
-          '& .MuiOutlinedInput-root': {
-            borderRadius: '8px',
-            paddingRight: '16px',
-            '& input': {
-              //color: 'var(--text-primary)',
-              '&::placeholder': {
-                color: 'var(--text-secondary)',
-              },
-              overflow: 'hidden',
-              fontSize: 16,
-              padding: '8px 16px',
-              height: '24px',
-            },
-            '& fieldset': {
-              border: '1px solid',
-              borderColor: 'var(--border-color)',
-            },
-            //hover
-            '&:hover fieldset': {
-              borderColor: 'var(--grey-neutral-300)',
-            },
-            //focus
-            '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-              borderColor: 'var(--primary)',
-              borderWidth: '1px',
-            },
+    //   styleOverrides: {
+    //     root: ({ ownerState }) => ({
+    //       '& .MuiFormHelperText-root': {
+    //         marginLeft: 0,
+    //         marginTop: '6px',
+    //         '&.Mui-error': {
+    //           color: 'var(--alert)',
+    //         },
+    //       },
+    //       '& .MuiInputLabel-root': {
+    //         position: 'static',
+    //         //color: 'var(--text-primary) ',
+    //         transform: 'none',
+    //         fontWeight: '600',
+    //         fontSize: '14px',
+    //         marginBottom: '8px',
+    //         '&.Mui-focused ': {
+    //           //color: 'var(--text-primary)',
+    //         },
+    //         '&.Mui-error ': {
+    //           //color: 'var(--text-primary)',
+    //         },
+    //         '&.Mui-disabled ': {
+    //           //color: 'var(--text-tertiary)',
+    //         },
+    //       },
+    //       '& .MuiOutlinedInput-root': {
+    //         borderRadius: '8px',
+    //         paddingRight: '16px',
+    //         '& input': {
+    //           //color: 'var(--text-primary)',
+    //           '&::placeholder': {
+    //             color: 'var(--text-secondary)',
+    //           },
+    //           overflow: 'hidden',
+    //           fontSize: 16,
+    //           padding: '8px 16px',
+    //           height: '24px',
+    //         },
+    //         '& fieldset': {
+    //           border: '1px solid',
+    //           borderColor: 'var(--border-color)',
+    //         },
+    //         //hover
+    //         '&:hover fieldset': {
+    //           borderColor: 'var(--grey-neutral-300)',
+    //         },
+    //         //focus
+    //         '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+    //           borderColor: 'var(--primary)',
+    //           borderWidth: '1px',
+    //         },
 
-            '&.Mui-error fieldset': {
-              borderColor: 'var(--alert) ',
-            },
-            '&.Mui-disabled fieldset': {
-              backgroundColor: 'var(--grey-neutral-700) ',
-              borderColor: 'var(--grey-primary-7000)',
-            },
-          },
-        }),
-      },
-    },
+    //         '&.Mui-error fieldset': {
+    //           borderColor: 'var(--alert) ',
+    //         },
+    //         '&.Mui-disabled fieldset': {
+    //           backgroundColor: 'var(--grey-neutral-700) ',
+    //           borderColor: 'var(--grey-primary-7000)',
+    //         },
+    //       },
+    //     }),
+    //   },
+    // },
 
     MuiTab: {
       styleOverrides: {

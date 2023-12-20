@@ -5,18 +5,27 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import './style.scss'
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { getCurrent } from '../../../redux/auth/asyncAction';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../../redux/store/store';
-import { logout } from '../../../redux/slice/authSlice'
+import { login, logout } from '../../../redux/auth/authSlice';
 
 const NavBar = () => {
     const navigate = useNavigate();
-    const dispatch: AppDispatch = useDispatch();
-    const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
-    const user = useSelector((state: RootState) => state.auth.user);
-    console.log(user);
+    const dispatch = useDispatch();
+    const { isLoggedIn } = useSelector((state) => state.auth);
+    useEffect(() => {
+        const setTimeoutID = setTimeout(() => {
+                if (isLoggedIn) dispatch(getCurrent());
+            }, 24 * 60 * 60 * 1000);
+            return () => {
+                clearTimeout(setTimeoutID);
+            };
+    }, [dispatch, isLoggedIn]);
+
     const handleLogout = () => {
         dispatch(logout());
+        navigate('/login');
     };
     return (
         <>
@@ -24,17 +33,13 @@ const NavBar = () => {
                 <div className="navContainer">
                     <Typography variant='h4' fontFamily={'Ephesis, cursive'} className='navTitle'>BookingApp</Typography>
                     <div className="navItems">
-                        {isAuthenticated ? (
+                        {isLoggedIn ? (
                         <>
                             <Box sx={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                                <Typography variant='body1' className='greeting'>
-                                    Xin chào, {user?.fullName}
-                                </Typography>
                                 <Button variant='outlined' className='navButton' onClick={handleLogout}>
                                     Đăng xuất
                                 </Button>
                             </Box>
-                            
                         </>
                         ) : (
                         <>
@@ -45,10 +50,10 @@ const NavBar = () => {
                                 <Button variant='outlined' className='navButton' onClick={() => navigate('/register')}>
                                     Đăng ký
                                 </Button>
-                            </Box>
-                            
+                            </Box> 
                         </>
                         )}
+                            
                     </div>
                 </div>
             </div>

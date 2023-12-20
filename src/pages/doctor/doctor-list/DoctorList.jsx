@@ -1,32 +1,20 @@
 import { Box, Button, Typography } from '@mui/material'
 import './style.scss'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../../../redux/store/store';
-import { useEffect } from 'react';
-import { fetchDoctors } from '../../../redux/slice/doctorSlice';
+import React, { useEffect } from 'react';
+import { getDoctors } from '../../../redux/doctor/asyncAction';
+
 
 const DoctorList = () => {
-    const dispatch: AppDispatch = useDispatch();
-    const { doctors, loading, error } = useSelector((state: RootState) => state.doctor);
     const navigate = useNavigate();
-
+    const dispatch = useDispatch();
+    const { doctors } = useSelector((state) => state.doctor);
+    console.log(doctors);
     useEffect(() => {
-        dispatch(fetchDoctors());
-        //dispatch(fetchDoctorCount());
-    }, [dispatch]);
+        dispatch(getDoctors());
+    }, []);
     
-    if (!Array.isArray(doctors)) {
-        return <div>No doctors available</div>;
-    }
-
-    if (loading) {
-        return <div>Loading...</div>;
-    }
-    
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
     return (
         <Box className='boxDoctorList'>
             {doctors.map(doctor => (
@@ -35,7 +23,7 @@ const DoctorList = () => {
                         <Box className='doctorImgBox'>
                             <img
                                 src='https://png.pngtree.com/png-vector/20221006/ourlarge/pngtree-chibi-doctor-kids-cute-boy-png-image_6288993.png'
-                                className='doctorImg'
+                                className='doctor-img'
                                 alt=''
                             />
                         </Box>
@@ -68,7 +56,7 @@ const DoctorList = () => {
                         </Box>
                     </Box>
                 </Box>
-            ))}
+            ))} 
             
         </Box>
     )

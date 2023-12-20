@@ -15,7 +15,6 @@ const Header = () => {
             <p className="headerDesc">
                 Đặt khám nhanh - Lấy số thứ tự trực tuyến - Tư vấn sức khỏe từ xa
             </p>
-            <Button variant='outlined' className='headerBtn'>Sign in / Register</Button>
             <div className="headerSearch">
                 <div className="headerSearchItem">
                     <SearchIcon className='headerIcon'/>
